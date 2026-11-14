@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A personal website introducing Naomi">
+    <meta name="keywords" content="Naomi, restaurants, recommendations, reservations, Malaysia">
+    <meta name="author" content="Naomi Tan Shi Ting">
+    <title>Dining Hub| Reservation</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html"><img src="image/logo.jpg" alt="Logo" class="logo"></a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="restaurants.html">Restaurants</a></li>
+                    <li><a href="recommendations.html">Recommend</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="reservations.html">Reservation</a></li>
+                    <li><a href="bill.html">Bill Calc</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-intro">
+            <div class="container">
+                <h1>Reserve a Table</h1>
+                <p>Complete the form below. A deposit is required to confirm your booking.</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="container">
+                <form id="reservationForm" class="styled-form" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fName" required>
+                        <span class="error" id="fullNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resEmail">Email Address</label>
+                        <input type="email" id="resEmail" name="resEmail" required>
+                        <span class="error" id="resEmailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resPhone">Phone Number</label>
+                        <input type="tel" id="resPhone" name="resPhone" title="At least 10 digits" required >
+                        <span class="error" id="resPhoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="restaurant">Restaurant</label>
+                        <select id="restaurant" name="restaurant" required>
+                            <option value="">-- Please select --</option>
+                            <option value="sae-ma-eul">Sae Ma Eul BBQ (SS15)</option>
+                            <option value="sushi-zanmai">Sushi Zanmai (Main Place)</option>
+                            <option value="bingshifu">BingShiFu (Taipan)</option>
+                            <option value="blackbixon">Blackbixon (KL)</option>
+                            <option value="haidilao">HaiDiLao Hotpot (Sunway Pyramid)</option>
+                            <option value="aoi-cafe">AOI Cafe (USJ Heights)</option>
+                        </select>
+                        <span class="error" id="restaurantError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resDate">Reservation Date &amp; Time</label>
+                        <input type="datetime-local" id="resDate" name="resDate" required>
+                        <span class="error" id="resDateError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="people">Number of People</label>
+                        <input type="number" id="people" name="people" min="1" required>
+                        <span class="error" id="peopleError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requests">Special Requests (optional)</label>
+                        <textarea id="requests" name="requests" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deposit">Deposit Amount (RM)</label>
+                        <input type="text" id="deposit" name="deposit" readonly value="">
+                    </div>
+
+                    <fieldset class="form-group">
+                        <legend>Deposit Method</legend>
+                        <label><input type="radio" name="payMethod" value="voucher" required> Voucher</label>
+                        <label><input type="radio" name="payMethod" value="online" required> Online Payment</label>
+                        <span class="error" id="payMethodError"></span>
+                    </fieldset>
+
+                    <div class="form-group" id="voucherGroup" hidden>
+                        <label for="voucherCode">Voucher Code (12 digits)</label>
+                        <input type="text" id="voucherCode" name="voucherCode" maxlength="12" title="12 digits">
+                        <span class="error" id="voucherCodeError"></span>
+                    </div>
+
+                    <div id="onlinePaymentGroup" hidden>
+                        <div class="form-group">
+                            <label for="onlineMethod">Select Payment Type</label>
+                            <select id="onlineMethod" name="onlineMethod">
+                                <option value="">-- Please select --</option>
+                                <option value="credit">Credit Card</option>
+                                <option value="debit">Debit Card</option>
+                                <option value="duitnow">DuitNow QR</option>
+                            </select>
+                            <span class="error" id="onlineMethodError"></span>
+                        </div>
+
+                        <div class="form-group" id="cardGroup" hidden>
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" name="cardNumber" title="Visa/Mastercard: 16 digits, Amex: 15 digits">
+                            <span class="error" id="cardNumberError"></span>
+                        </div>
+
+                        <div class="form-group" id="duitnowGroup" hidden>
+                            <label>Scan to Pay with DuitNow QR</label>
+                            <div style="text-align: center; padding: 1.5rem; background: #fff; border: 2px dashed #6B1F2A; border-radius: 10px; max-width: 250px; margin: 0 auto;">
+                                <img src="image/qr.png" alt="DuitNow QR Code" style="width: 100%; height: auto;">
+                                <p style="font-size: 0.9rem; color: #555; margin-top: 15px; font-weight: bold;">Scan using your banking app</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="billingEmail">Billing Email Address</label>
+                        <input type="email" id="billingEmail" name="billingEmail" required>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="sameAsEmail"> Same as email address
+                        </label>
+                        <span class="error" id="billingEmailError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn1">Confirm Reservation</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer clas="site-footer">
+        <p>Naomi Tan Shi Ting | Business (Marketing) Student</p>
+        <p><a href="https://www.swinburne.edu.au/">Swinburne University of Technology</a></p>
+        <p>&copy; 2026 Dining Hub | Created for Web Development Assignment</p>
+        <p>Contact: <a href="mailto:106400952@student.swin.edu.au">106400952@student.swin.edu.au</a></p>
+    </footer>
+</body>
+</html>

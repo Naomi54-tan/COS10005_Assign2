@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Dining Hub - Estimated Bill Calculator">
+    <title>Dining Hub | Bill Calculator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html"><img src="image/logo.jpg" alt="Logo" class="logo"></a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="restaurants.html">Restaurants</a></li>
+                    <li><a href="recommendations.html">Recommend</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="reservations.html">Reservation</a></li>
+                    <li><a href="bill.html">Bill Calc</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-intro">
+            <div class="container">
+                <h1>Estimated Bill Calculator</h1>
+                <p>Estimate your total dining cost including service charge and SST.</p>
+            </div>
+        </section>
+
+        <section>
+            <form id="billForm" class="styled-form">
+                <div class="form-group">
+                    <label for="calcRestaurant">Select Restaurant</label>
+                    <select id="calcRestaurant">
+                        <option value="">-- Please select --</option>
+                        <option value="sae-ma-eul">Sae Ma Eul BBQ (Avg: RM 30/pax)</option>
+                        <option value="sushi-zanmai">Sushi Zanmai (Avg: RM 30/pax)</option>
+                        <option value="bingshifu">BingShiFu (Avg: RM 25/pax)</option>
+                        <option value="blackbixon">Blackbixon Cafe (Avg: RM 40/pax)</option>
+                        <option value="haidilao">HaiDiLao Hotpot (Avg: RM 80/pax)</option>
+                        <option value="aoi-cafe">AOI Cafe (Avg: RM 30/pax)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="calcPeople">Number of People</label>
+                    <input type="number" id="calcPeople" min="1" value="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="calcAddons">Add-ons (Optional)</label>
+                    <select id="calcAddons">
+                        <option value="0">None</option>
+                        <option value="5">Add Drinks (+RM 5/pax)</option>
+                        <option value="10">Add Dessert (+RM 10/pax)</option>
+                        <option value="15">Add Drinks & Dessert (+RM 15/pax)</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="background-color: #F9F2E6; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                    <h2 style="margin-bottom: 0;">Estimated Total:</h2>
+                    <div id="totalBill" style="font-size: 2.5rem; font-weight: bold; color: #6B1F2A;">RM 0.00</div>
+                    <p style="font-size: 0.9rem; color: #5C5C5C; margin-top: 0.5rem;">Includes 10% Service Charge and 6% SST</p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer clas="site-footer">
+        <p>Naomi Tan Shi Ting | Business (Marketing) Student</p>
+        <p><a href="https://www.swinburne.edu.au/">Swinburne University of Technology</a></p>
+        <p>&copy; 2026 Dining Hub | Created for Web Development Assignment</p>
+        <p>Contact: <a href="mailto:106400952@student.swin.edu.au">106400952@student.swin.edu.au</a></p>
+    </footer>
+</body>
+</html>

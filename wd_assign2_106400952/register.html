@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A personal website introducing Naomi">
+    <meta name="keywords" content="Naomi, restaurants, recommendations, reservations, Malaysia">
+    <meta name="author" content="Naomi Tan Shi Ting">
+    <title>Dining Hub| Register</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html"><img src="image/logo.jpg" alt="Logo" class="logo"></a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="restaurants.html">Restaurants</a></li>
+                    <li><a href="recommendations.html">Recommend</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="reservations.html">Reservation</a></li>
+                    <li><a href="bill.html">Bill Calc</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-intro">
+            <div class="container">
+                <h1>Create Your Account</h1>
+                <p>Save your preferences and reserve tables faster.</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="container">
+                <form id="registerForm" class="styled-form" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required
+                            pattern="[A-Za-z0-9_]{5,}" title="At least 5 characters: letters, numbers, underscores">
+                        <span class="error" id="usernameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required
+                            title="8–15 digits, numbers only">
+                        <span class="error" id="phoneError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required
+                            title="Min 10 characters, with upper, lower, number, special character">
+                        <span class="error" id="passwordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <span class="error" id="confirmPasswordError"></span>
+                    </div>
+
+                    <fieldset class="form-group">
+                        <legend>Gender</legend>
+                        <label><input type="radio" name="gender" value="m" required> Male</label>
+                        <label><input type="radio" name="gender" value="f"> Female</label>
+                        <label><input type="radio" name="gender" value="other"> Other</label>
+                        <span class="error" id="genderError"></span>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="dietary">Dietary Preferences</label>
+                        <select id="dietary" name="dietary" required>
+                            <option value="">-- Please select --</option>
+                            <option value="none">None</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="halal">Halal</option>
+                        </select>
+                        <span class="error" id="dietaryError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country / Region</label>
+                        <select id="country" name="country" required>
+                            <option value="">-- Please select --</option>
+                            <option value="malaysia">Malaysia</option>
+                            <option value="singapore">Singapore</option>
+                            <option value="indonesia">Indonesia</option>
+                            <option value="china">China</option>
+                            <option value="thailand">Thailand</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error" id="countryError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn1">Register</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+   <footer clas="site-footer">
+        <p>Naomi Tan Shi Ting | Business (Marketing) Student</p>
+        <p><a href="https://www.swinburne.edu.au/">Swinburne University of Technology</a></p>
+        <p>&copy; 2026 Dining Hub | Created for Web Development Assignment</p>
+        <p>Contact: <a href="mailto:106400952@student.swin.edu.au">106400952@student.swin.edu.au</a></p>
+    </footer>
+</body>
+</html>

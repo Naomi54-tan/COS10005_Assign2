@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A personal website introducing Naomi">
+    <meta name="keywords" content="Naomi, restaurants, recommendations, reservations, Malaysia">
+    <meta name="author" content="Naomi Tan Shi Ting">
+    <title>Dining Hub| Register</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html"><img src="image/logo.jpg" alt="Logo" class="logo"></a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="restaurants.html">Restaurants</a></li>
+                    <li><a href="recommendations.html">Recommend</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="reservations.html">Reservation</a></li>
+                    <li><a href="bill.html">Bill Calc</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-intro">
+            <div class="container">
+                <h1>Find Your Match</h1>
+                <p>Tell us what you're looking for and we'll suggest the best restaurant for you.</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="container">
+                <form id="recommendForm" class="styled-form" novalidate>
+                    <div class="form-group">
+                        <label for="diet">Dietary Preference</label>
+                        <select id="diet" name="diet" required>
+                            <option value="">-- Please select --</option>
+                            <option value="none">None</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="halal">Halal</option>
+                        </select>
+                        <span class="error" id="dietError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Budget Range (per person)</label>
+                        <select id="budget" name="budget" required>
+                            <option value="">-- Please select --</option>
+                            <option value="low">RM 20 and below</option>
+                            <option value="mid">RM 21 – RM 40</option>
+                            <option value="high">RM 41 and above</option>
+                        </select>
+                        <span class="error" id="budgetError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purpose">Dining Purpose</label>
+                        <select id="purpose" name="purpose" required>
+                            <option value="">-- Please select --</option>
+                            <option value="family">Family</option>
+                            <option value="date">Date</option>
+                            <option value="business">Business</option>
+                        </select>
+                        <span class="error" id="purposeError"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn1">Get Recommendation</button>
+                </form>
+
+                <div id="recommendResult" class="recommend-result" aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer clas="site-footer">
+        <p>Naomi Tan Shi Ting | Business (Marketing) Student</p>
+        <p><a href="https://www.swinburne.edu.au/">Swinburne University of Technology</a></p>
+        <p>&copy; 2026 Dining Hub | Created for Web Development Assignment</p>
+        <p>Contact: <a href="mailto:106400952@student.swin.edu.au">106400952@student.swin.edu.au</a></p>
+    </footer>
+</body>
+</html>
